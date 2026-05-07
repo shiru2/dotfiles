@@ -1,0 +1,6 @@
+# OS
+.DS_Store
+
+# Claude - secrets/local only
+claude/.credentials.json
+claude/settings.local.json

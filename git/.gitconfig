@@ -1,0 +1,9 @@
+[user]
+	email = sawaitomoki2226@gmail.com
+	name = shiru2
+[credential]
+	helper = store
+[http]
+	proxy = http://proxy.cc.utsunomiya-u.ac.jp:8080
+[https]
+	proxy = http://proxy.cc.utsunomiya-u.ac.jp:8080
