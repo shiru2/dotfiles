@@ -19,7 +19,10 @@ bash setup.sh
 | ツール | 用途 | インストール |
 |---|---|---|
 | `jq` | statusline.shのJSON解析 | `sudo apt install jq` |
+| `DejaVu Sans Mono` | ▰▱ などUnicode文字の表示 | `sudo apt install fonts-dejavu` |
 | `rtk` | Claude Codeトークン節約プロキシ | 下記参照 |
+
+> **注意**: フォントをインストール後、ターミナルのフォント設定を **DejaVu Sans Mono** に変更する必要がある。
 
 ```bash
 # RTK
