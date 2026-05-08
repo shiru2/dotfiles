@@ -59,7 +59,11 @@
     ],
     "profiles": 
     {
-        "defaults": {},
+        "defaults": {
+            "font": {
+                "face": "Cascadia Code"
+            }
+        },
         "list": 
         [
             {
