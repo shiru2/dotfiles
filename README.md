@@ -2,7 +2,13 @@
 
 ## セットアップ
 
+**先に依存ツールを入れてからsetup.shを実行する。**
+
 ```bash
+# 1. jqをインストール（これがないとステータスバーが --- のまま表示される）
+sudo apt install jq
+
+# 2. dotfilesをクローンしてシンボリックリンクを作成
 git clone git@github.com:shiru2/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 bash setup.sh
@@ -10,11 +16,13 @@ bash setup.sh
 
 ## 依存ツール
 
-```bash
-# jq（statusline.shのJSON解析に必要）
-sudo apt install jq
+| ツール | 用途 | インストール |
+|---|---|---|
+| `jq` | statusline.shのJSON解析 | `sudo apt install jq` |
+| `rtk` | Claude Codeトークン節約プロキシ | 下記参照 |
 
-# RTK（Claude Codeトークン節約プロキシ）
+```bash
+# RTK
 curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
 ~/.local/bin/rtk init
 ```
