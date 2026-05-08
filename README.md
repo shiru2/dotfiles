@@ -60,3 +60,4 @@ cx ▰▰▱▱▱▱▱▱▱▱  22% | Sonnet 4.6 | master | +36/-0
 | `git/.gitconfig` | `~/.gitconfig` |
 | `zsh/.zshrc` | `~/.zshrc` |
 | `home/CLAUDE.md` | `~/CLAUDE.md` |
+| `windows-terminal/settings.json` | `%APPDATA%\..\Local\Packages\Microsoft.WindowsTerminal_...\LocalState\settings.json` |
