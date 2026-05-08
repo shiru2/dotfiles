@@ -23,5 +23,6 @@ link "$DOTFILES/claude/statusline.sh"     "$HOME/.claude/statusline.sh"
 link "$DOTFILES/claude/hooks/rtk-rewrite.sh" "$HOME/.claude/hooks/rtk-rewrite.sh"
 link "$DOTFILES/git/.gitconfig"           "$HOME/.gitconfig"
 link "$DOTFILES/zsh/.zshrc"              "$HOME/.zshrc"
+link "$DOTFILES/home/CLAUDE.md"          "$HOME/CLAUDE.md"
 
 echo "Done."

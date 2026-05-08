@@ -56,3 +56,4 @@ cx ▰▰▱▱▱▱▱▱▱▱  22% | Sonnet 4.6 | master | +36/-0
 | `claude/hooks/rtk-rewrite.sh` | `~/.claude/hooks/rtk-rewrite.sh` |
 | `git/.gitconfig` | `~/.gitconfig` |
 | `zsh/.zshrc` | `~/.zshrc` |
+| `home/CLAUDE.md` | `~/CLAUDE.md` |
