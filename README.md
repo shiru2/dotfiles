@@ -8,21 +8,31 @@
 # 1. jqをインストール（これがないとステータスバーが --- のまま表示される）
 sudo apt install jq
 
-# 2. dotfilesをクローンしてシンボリックリンクを作成
+# 2. Node.js をインストール（Claude Codeに必要）
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+source ~/.zshrc
+nvm install --lts
+
+# 3. Claude Code をインストール
+npm install -g @anthropic-ai/claude-code
+
+# 4. dotfilesをクローンしてシンボリックリンクを作成
 git clone git@github.com:shiru2/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 bash setup.sh
 ```
+
+> **注意**: Claude Codeのインストール後、`claude` コマンドが見つからない場合は `export PATH="$HOME/.local/bin:$PATH"` を実行してから再試行する。
 
 ## 依存ツール
 
 | ツール | 用途 | インストール |
 |---|---|---|
 | `jq` | statusline.shのJSON解析 | `sudo apt install jq` |
-| `DejaVu Sans Mono` | ▰▱ などUnicode文字の表示 | `sudo apt install fonts-dejavu` |
+| Cascadia Code | WSL/PowerShell での ▰▱ 表示 | Windows Terminal設定で自動適用（setup.sh実行時） |
+| **DejaVu Sans Mono** | **cmd での ▰▱ 表示（これがないと文字崩れ）** | Windows Terminal の cmd プロファイルに設定済み |
 | `rtk` | Claude Codeトークン節約プロキシ | 下記参照 |
 
-> **注意**: フォントをインストール後、ターミナルのフォント設定を **DejaVu Sans Mono** に変更する必要がある。
 
 ```bash
 # RTK
