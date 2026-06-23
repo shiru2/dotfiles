@@ -37,9 +37,9 @@ format_reset() {
   local rem=$(( epoch - NOW ))
   [ "$rem" -le 0 ] && return
   local d=$(( rem / 86400 )) h=$(( rem % 86400 / 3600 )) m=$(( rem % 3600 / 60 ))
-  if [ "$d" -gt 0 ]; then   printf ' %d日 %2d時間 %2d分でリセット' "$d" "$h" "$m"
-  elif [ "$h" -gt 0 ]; then printf '     %2d時間 %2d分でリセット' "$h" "$m"
-  else                       printf '            %2d分でリセット' "$m"; fi
+  if [ "$d" -gt 0 ]; then   printf ' %dd %2dh %2dm' "$d" "$h" "$m"
+  elif [ "$h" -gt 0 ]; then printf '     %2dh %2dm' "$h" "$m"
+  else                       printf '          %2dm' "$m"; fi
 }
 
 # --- stdin JSON パース ---
@@ -73,7 +73,7 @@ if git -C "$CWD" rev-parse --git-dir > /dev/null 2>&1; then
   [ -n "$BRANCH" ] && GIT_BRANCH=" | ${MAGENTA}${BRANCH}${RESET}"
 fi
 
-# --- レートリミット（stdin JSONから取得） ---
+# --- レートリミット ---
 FIVE_RESET=$(format_reset "$FIVE_RESET_EPOCH")
 SEVEN_RESET=$(format_reset "$SEVEN_RESET_EPOCH")
 

@@ -4,3 +4,7 @@
 # Claude - secrets/local only
 claude/.credentials.json
 claude/settings.local.json
+
+# Shell secrets (API keys etc.)
+*.local
+.zshrc.local
