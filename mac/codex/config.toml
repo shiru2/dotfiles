@@ -1,0 +1,21 @@
+# Codex CLI / Codex app の基本設定（テンプレート）
+#
+# setup.sh は ~/.codex/config.toml が無いときだけこのファイルをコピーする。
+# Codex はプロジェクトの信頼設定やプラグイン状態をこのファイルに書き込むため、
+# シンボリックリンクにはしない（端末ごとのパスがリポジトリに混ざるのを防ぐ）。
+# 共通設定を変えたら、このファイルを手で更新すること。
+
+model = "gpt-6.1-sol"
+model_reasoning_effort = "high"
+
+# 確認なしでフルアクセスで実行する設定。慎重に使いたい端末では
+# sandbox_mode = "workspace-write" / approval_policy = "on-request" に戻す。
+sandbox_mode = "danger-full-access"
+approval_policy = "never"
+
+[features]
+goals = true
+daemon_auto_start = false
+
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"

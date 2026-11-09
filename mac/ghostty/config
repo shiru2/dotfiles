@@ -1,0 +1,37 @@
+# Ghostty Configuration
+
+# 左のOptionキーのみをAltキーとして認識
+# これにより、右のOptionキーは従来通りmacOSの特殊文字入力に使用できます
+# zellijなどのターミナルマルチプレクサーでAlt + キーの組み合わせが使えるようになります
+macos-option-as-alt = left
+
+# VSCode風の環境設定（記事より）
+theme = TokyoNight
+maximize = true
+font-family = PlemolJP35 Console NF
+background-opacity = 0.8
+macos-titlebar-style = tabs
+background-blur = true
+adjust-cell-height = 2
+font-thicken = true
+
+# 画面分割のキーバインド
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+l=goto_split:right
+
+# ウィンドウ設定
+window-inherit-working-directory = true
+shell-integration = detect
+
+# クイックターミナル
+quick-terminal-position = "right"
+quick-terminal-screen = "main"
+quick-terminal-animation-duration = 0.3
+keybind = "cmd+shift+t=toggle_quick_terminal"
+
+# クリップボード
+clipboard-write = allow
+clipboard-trim-trailing-spaces = true
+
+# タブ設定
+window-new-tab-position = current

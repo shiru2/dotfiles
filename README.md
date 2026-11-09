@@ -29,25 +29,36 @@ bash setup.sh
 ### macOS
 
 ```bash
-# 1. Homebrew でツールをインストール
-brew install jq eza fzf
+# 1. Homebrew をインストール（未導入の場合）
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# 2. Node.js をインストール
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-source ~/.zshrc
-nvm install --lts
-
-# 3. Claude Code をインストール
-npm install -g @anthropic-ai/claude-code
-
-# 4. dotfilesをクローンしてシンボリックリンクを作成
+# 2. dotfilesをクローン（SSH鍵未設定なら HTTPS: https://github.com/shiru2/dotfiles.git）
 git clone git@github.com:shiru2/dotfiles.git ~/dotfiles
 cd ~/dotfiles
+
+# 3. Homebrew パッケージ・アプリをまとめてインストール（不要な行は Brewfile でコメントアウト）
+brew bundle --file=mac/Brewfile
+
+# 4. Claude Code / Codex CLI をインストール
+npm install -g @anthropic-ai/claude-code @openai/codex
+
+# 5. シンボリックリンク作成（既存ファイルは .bak に退避される）
 bash setup.sh
 
-# 5. APIキーなどの秘密情報は ~/.zshrc.local に記述
+# 6. スキル（yomiyasu, Cloudflare など）をインストール
+bash install-skills.sh
+
+# 7. APIキーなどの秘密情報は ~/.zshrc.local に記述（コミットされない）
 echo 'export OPENAI_API_KEY="sk-..."' >> ~/.zshrc.local
+
+# 8. ログイン
+gh auth login
+claude   # 起動後 /login
+codex login
 ```
+
+> Codex の `~/.codex/config.toml` はリンクではなく、無い場合だけテンプレートをコピーする（Codex がプロジェクトの信頼設定などを書き込むため）。共通設定を変えたら `mac/codex/config.toml` を手で更新する。
 
 ## 依存ツール
 
@@ -59,6 +70,8 @@ echo 'export OPENAI_API_KEY="sk-..."' >> ~/.zshrc.local
 | `rtk` | Claude Codeトークン節約プロキシ | 下記参照 |
 | `eza` | ls の代替（macOS） | `brew install eza` |
 | `fzf` | ファジーファインダー | `brew install fzf` / `sudo apt install fzf` |
+| Node.js / `npx` | Claude Code・Codex・`install-skills.sh` | `brew install node` |
+| PlemolJP NF | Ghostty のフォント | `brew install --cask font-plemol-jp-nf` |
 
 
 ```bash
@@ -96,16 +109,22 @@ dotfiles/
 │   ├── statusline.sh    # 共通 statusline
 │   └── hooks/
 │       └── rtk-rewrite.sh
+├── codex/
+│   └── AGENTS.md        # Codex のグローバル指示（共通）
 ├── mac/                 # macOS固有
+│   ├── Brewfile         # brew bundle 用パッケージ一覧
 │   ├── claude/
 │   │   ├── CLAUDE.md
 │   │   └── settings.json
+│   ├── codex/config.toml # Codex 設定テンプレート（無ければコピー）
+│   ├── ghostty/config
 │   ├── git/.gitconfig
 │   └── zsh/.zshrc
 ├── git/.gitconfig       # WSL用
 ├── zsh/.zshrc           # WSL用
 ├── home/CLAUDE.md       # ~/CLAUDE.md（共通）
 ├── windows-terminal/    # Windows Terminal設定
+├── install-skills.sh    # Claude Code / Codex 用スキルの取得
 └── setup.sh             # セットアップスクリプト（OS自動判定）
 ```
 
@@ -118,6 +137,7 @@ dotfiles/
 | `claude/statusline.sh` | `~/.claude/statusline.sh` |
 | `claude/hooks/rtk-rewrite.sh` | `~/.claude/hooks/rtk-rewrite.sh` |
 | `home/CLAUDE.md` | `~/CLAUDE.md` |
+| `codex/AGENTS.md` | `~/.codex/AGENTS.md` |
 
 ### WSL
 | dotfiles | リンク先 |
@@ -135,3 +155,5 @@ dotfiles/
 | `mac/claude/settings.json` | `~/.claude/settings.json` |
 | `mac/git/.gitconfig` | `~/.gitconfig` |
 | `mac/zsh/.zshrc` | `~/.zshrc` |
+| `mac/ghostty/config` | `~/.config/ghostty/config` |
+| `mac/codex/config.toml` | `~/.codex/config.toml`（無い場合のみコピー） |
