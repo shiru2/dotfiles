@@ -1,0 +1,2 @@
+# どの環境でcloneしても改行をLFに固定する（Windows側Gitの autocrlf 対策）
+* text=auto eol=lf
