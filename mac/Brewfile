@@ -19,7 +19,6 @@ brew "neovim"
 brew "ripgrep"
 brew "tree"
 brew "wget"
-brew "mas"           # App Store アプリのインストール用
 
 # --- 開発 ---
 brew "bottom"
@@ -69,56 +68,11 @@ cask "chrome-remote-desktop-host"
 cask "mactex-no-gui"
 cask "dotnet"
 cask "whisky"
-cask "raycast"
-cask "clipy"
-cask "karabiner-elements"
-cask "rectangle"
-cask "logi-options+"
-cask "claude"
-cask "chatgpt"
-cask "antigravity"
-cask "google-chrome"
-cask "firefox"
-cask "zen"
-cask "helium-browser"
-cask "vivaldi"
-cask "microsoft-edge"
-cask "google-drive"
-cask "discord"
-cask "zoom"
-cask "microsoft-teams"
-cask "microsoft-powerpoint"
-cask "raindropio"
-cask "logseq"
-cask "calibre"
-cask "vlc"
-cask "godot"
-cask "steam"
-cask "iterm2"
 # 以前入れていたターミナル類（必要なら有効化）
 # cask "alacritty"
 # cask "wezterm"
 # cask "warp"
 # cask "hyper"
-
-# --- App Store（mas）---
-# 事前に App Store アプリで Apple ID にサインインしておくこと
-mas "RunCat Neo", id: 6757801838   # 旧 RunCat(id1429033973) はストアから削除済みの後継版
-mas "LINE", id: 539883307
-mas "Kindle", id: 302584613
-mas "紀伊國屋書店Kinoppy", id: 572547904
-mas "Microsoft Word", id: 462054704
-mas "Microsoft Excel", id: 462058435
-mas "Microsoft Outlook", id: 985367838
-mas "Microsoft Bing for Safari", id: 1560727432
-mas "Numbers", id: 409203825
-mas "TickTick", id: 966085870
-mas "Trello", id: 1278508951
-mas "WhatsApp", id: 310633997
-mas "Whisper Transcription", id: 1668083311
-mas "Windows App", id: 1295203466
-mas "PDFelement", id: 1470732135
-mas "Steam Link", id: 1246969117
 
 # --- フォント ---
 cask "font-plemol-jp-nf"   # ghostty: PlemolJP35 Console NF
