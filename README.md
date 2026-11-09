@@ -71,7 +71,7 @@ codex login
 | `eza` | ls の代替（macOS） | `brew install eza` |
 | `fzf` | ファジーファインダー | `brew install fzf` / `sudo apt install fzf` |
 | Node.js / `npx` | Claude Code・Codex・`install-skills.sh` | `brew install node` |
-| PlemolJP NF | Ghostty のフォント | `brew install --cask font-plemol-jp-nf` |
+| UDEV Gothic NF | Ghostty のフォント | `brew install --cask font-udev-gothic-nf` |
 
 
 ```bash

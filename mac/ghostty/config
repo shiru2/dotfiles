@@ -8,7 +8,7 @@ macos-option-as-alt = left
 # VSCode風の環境設定（記事より）
 theme = TokyoNight
 maximize = true
-font-family = PlemolJP35 Console NF
+font-family = UDEV Gothic NF
 background-opacity = 0.8
 macos-titlebar-style = tabs
 background-blur = true
@@ -35,3 +35,6 @@ clipboard-trim-trailing-spaces = true
 
 # タブ設定
 window-new-tab-position = current
+
+# Claude Code で Shift+Enter を改行にする
+keybind = shift+enter=text:\x1b\r

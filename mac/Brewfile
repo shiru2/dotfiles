@@ -14,4 +14,4 @@ brew "zellij"        # alias ze
 brew "tree"          # ディレクトリ構成の表示
 
 cask "ghostty"               # mac/ghostty/config
-cask "font-plemol-jp-nf"     # ghostty: PlemolJP35 Console NF
+cask "font-udev-gothic-nf"   # ghostty: UDEV Gothic NF
