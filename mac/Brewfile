@@ -11,6 +11,7 @@ brew "eza"           # alias ls
 brew "fzf"           # .zshrc / alias cdc
 brew "node"          # Claude Code / Codex / npx skills
 brew "zellij"        # alias ze
+brew "tree"          # ディレクトリ構成の表示
 
 cask "ghostty"               # mac/ghostty/config
 cask "font-plemol-jp-nf"     # ghostty: PlemolJP35 Console NF
