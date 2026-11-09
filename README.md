@@ -37,7 +37,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 git clone git@github.com:shiru2/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
-# 3. Homebrew パッケージ・アプリをまとめてインストール（不要な行は Brewfile でコメントアウト）
+# 3. dotfiles に必要な最低限のツールをインストール（その他のアプリは各自で）
 brew bundle --file=mac/Brewfile
 
 # 4. Claude Code / Codex CLI をインストール

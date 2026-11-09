@@ -1,80 +1,16 @@
-# macOS 用 Homebrew パッケージ一覧
+# macOS 用 Homebrew パッケージ（dotfiles が動くのに必要な最低限）
 # 使い方: brew bundle --file=~/dotfiles/mac/Brewfile
-# 不要なものは行頭に # を付けて除外する
+# それ以外のツールやアプリは各自で入れる
 
-tap "th-ch/youtube-music"
-
-# --- 必須（dotfiles / Claude Code / Codex が依存） ---
 brew "git"
-brew "git-lfs"
-brew "gh"
+brew "git-lfs"       # .gitconfig の lfs フィルタ
+brew "gh"            # .gitconfig の credential helper
 brew "jq"            # statusline.sh
 brew "rtk"           # Claude Code トークン節約フック
 brew "eza"           # alias ls
-brew "fzf"
+brew "fzf"           # .zshrc / alias cdc
 brew "node"          # Claude Code / Codex / npx skills
-brew "node@24"
-brew "zellij"
-brew "neovim"
-brew "ripgrep"
-brew "tree"
-brew "wget"
+brew "zellij"        # alias ze
 
-# --- 開発 ---
-brew "bottom"
-brew "cliproxyapi"
-brew "cmake"
-brew "gcc"
-brew "go"
-brew "pipx"
-brew "pnpm"
-brew "postgresql@15"
-brew "protobuf"
-brew "pyenv"
-brew "rust"
-brew "riscv64-elf-gcc"
-
-# --- ドキュメント・メディア ---
-brew "fluid-synth"
-brew "jpeg-xl"
-brew "libass"
-brew "lilypond"
-brew "ocrmypdf"
-brew "pandoc"
-brew "poppler"
-brew "tesseract-lang"
-brew "timidity"
-brew "yt-dlp"
-brew "spicetify-cli"
-
-# --- アプリ ---
-cask "ghostty"
-cask "visual-studio-code"
-cask "cursor"
-cask "codexbar"
-cask "obsidian"
-cask "notion"
-cask "slack"
-cask "arc"
-cask "brave-browser"
-cask "spotify"
-cask "youtube-music"
-cask "hiddenbar"
-cask "db-browser-for-sqlite"
-cask "gcloud-cli"
-cask "libreoffice"
-cask "adobe-acrobat-reader"
-cask "chrome-remote-desktop-host"
-cask "mactex-no-gui"
-cask "dotnet"
-cask "whisky"
-# 以前入れていたターミナル類（必要なら有効化）
-# cask "alacritty"
-# cask "wezterm"
-# cask "warp"
-# cask "hyper"
-
-# --- フォント ---
-cask "font-plemol-jp-nf"   # ghostty: PlemolJP35 Console NF
-cask "font-udev-gothic-nf"
-cask "font-noto-sans-cjk-jp"
+cask "ghostty"               # mac/ghostty/config
+cask "font-plemol-jp-nf"     # ghostty: PlemolJP35 Console NF
